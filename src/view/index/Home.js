@@ -16,7 +16,7 @@ import newsCreator from '../../store/actionCreator/home/index.js'
 		// console.log(this.props)
 	}
     render() {
-		// console.log(this.props.history)
+		// console.log(this)
         return (
 		<div>
 			<header>
@@ -34,7 +34,7 @@ import newsCreator from '../../store/actionCreator/home/index.js'
 					{
 						this.props.classify_list.map(v=>(
 							<li onClick={()=>{
-								this.props.history.push({pathname:"/showlist",state:{a:1,b:2}})
+								this.props.history.push({pathname:"/showlist"})
 							}} key={v.id} ><img src={v.pic}/><p>{v.name}</p></li>
 						))
 					}
