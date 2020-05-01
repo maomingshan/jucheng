@@ -90,9 +90,6 @@ export default class Showlist extends Component {
 						</p>
 					</div>
 				</div>
-				
-				
-				
             </div>
         )
     }

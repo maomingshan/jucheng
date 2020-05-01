@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {
 	NavLink,
-	Route
+	Route,
+	Switch
 } from 'react-router-dom'
 import Home from './index/Home.js'
 import Theater from './index/Theater.js'
@@ -14,6 +15,7 @@ export default class Index extends Component {
         this.state = {};
     }
     render() {
+		console.log(this)
         return (
             <div>
                 <nav className={"nav"}>
@@ -34,10 +36,12 @@ export default class Index extends Component {
 						我的
 					</NavLink>
                 </nav>
-				<Route path={'/theater'} component={Theater}></Route>
-				<Route path={'/ticket'} component={Ticket}></Route>
-				<Route path={'/my'} component={My}></Route>
-				<Route path={'/'} exact component={Home}></Route>
+				<Switch>
+					<Route path={'/theater'} component={Theater}></Route>
+					<Route path={'/ticket'} component={Ticket}></Route>
+					<Route path={'/my'} component={My}></Route>
+					<Route path={'/'} exact component={Home}></Route>
+				</Switch>
             </div>
         )
     }
