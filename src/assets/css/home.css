@@ -333,9 +333,9 @@ li:last-child {
 	width: 100%;
 	height: 40px;
 	overflow: hidden;
-	-webkit-line-clamp: 2;
-	text-overflow: ellipsis;
-	-webkit-box-orient: vertical;
+	display:-webkit-box;
+	-webkit-box-orient:vertical; 
+	-webkit-line-clamp:2; 
 }
 .recommend_box h3 img{
 	width: 36px;
@@ -403,7 +403,7 @@ li:last-child {
 	background-position: 35px -20px;
 	transition: all 0.1s;	
 }
-.my{
+.My{
 	width: 100%;
 	height: 20px;
 	overflow: hidden;
@@ -411,7 +411,7 @@ li:last-child {
 	background-size: 20px 40px;
 	background-position: 35px 0px;
 }
-.my:hover{
+.My:hover{
 	background-position: 35px -20px;
 	transition: all 0.1s;	
 }

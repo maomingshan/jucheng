@@ -21,23 +21,23 @@ export default class Index extends Component {
 						<div className="home"></div>
 						首页
 					</NavLink>
-					<NavLink className={"App-link"} exact activeClassName={"App-active"} to={"/theater"}>
+					<NavLink className={"App-link"}  activeClassName={"App-active"} to={"/theater"}>
 						<div className="theater"></div>
 						剧院
 					</NavLink>
-					<NavLink className={"App-link"} exact activeClassName={"App-active"} to={"/ticket"}>
+					<NavLink className={"App-link"}  activeClassName={"App-active"} to={"/ticket"}>
 						<div className="wallet"></div>
 						票夹
 					</NavLink>
-					<NavLink className={"App-link"} exact activeClassName={"App-active"} to={"/my"}>
-						<div className="my"></div>
+					<NavLink className={"App-link"}  activeClassName={"App-active"} to={"/my"}>
+						<div className="My"></div>
 						我的
 					</NavLink>
                 </nav>
-				<Route path={'/'} exact component={Home}></Route>
 				<Route path={'/theater'} component={Theater}></Route>
 				<Route path={'/ticket'} component={Ticket}></Route>
 				<Route path={'/my'} component={My}></Route>
+				<Route path={'/'} exact component={Home}></Route>
             </div>
         )
     }

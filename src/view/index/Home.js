@@ -16,7 +16,7 @@ import newsCreator from '../../store/actionCreator/home/index.js'
 		// console.log(this.props)
 	}
     render() {
-		// console.log(this.props.recommend)
+		// console.log(this.props.history)
         return (
 		<div>
 			<header>
@@ -33,9 +33,12 @@ import newsCreator from '../../store/actionCreator/home/index.js'
 				<ul>
 					{
 						this.props.classify_list.map(v=>(
-							<li key={v.id}><img src={v.pic}/><p>{v.name}</p></li>
+							<li onClick={()=>{
+								this.props.history.push({pathname:"/showlist",state:{a:1,b:2}})
+							}} key={v.id} ><img src={v.pic}/><p>{v.name}</p></li>
 						))
 					}
+					
 				</ul>
 			</div>
 			<div className="adv">
