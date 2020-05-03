@@ -5,7 +5,6 @@ export default class Ticket extends Component {
         super(props);
         this.state = {};
     }
-
     render() {
         return (
             <div>
@@ -17,7 +16,9 @@ export default class Ticket extends Component {
 					<div className="down-box">
 						<img src="https://m.juooo.com/static/img/ticket_empty.cf4b072.png" />
 						<p>暂无电子票</p>
-						<button >登录</button>
+						<button onClick={()=>{
+							this.props.history.push({pathname:"/login"})
+						}}>登录</button>
 					</div>
 					
 				</div>

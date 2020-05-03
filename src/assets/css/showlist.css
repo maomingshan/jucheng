@@ -40,7 +40,7 @@
 .Showlist-movebox-min{
 	width: 20%;
 	margin: 0;
-	height: 100%;
+	height: 90%;
 	line-height: 48px;
 	display: inline-block;
 	color: #000000;
@@ -62,7 +62,8 @@
 	margin-top: 5px;
 }
 .show-active{
-	color: orangered;
+	color:#ff6743;
+	border-bottom: 2px solid #ff6743;
 }
 .Showlist-footList{
 	margin-top: 100px;
@@ -74,7 +75,8 @@
 	margin-left: 15px;
 	float: left;
 	width: 44%;
-	height: 400px;
+	height: 390px;
+	position: relative;
 }
 
 .Showlist-footList-list img{
@@ -91,13 +93,9 @@
 	-webkit-box-orient:vertical; 
 	-webkit-line-clamp:2; 
 }
-.Showlist-footList-list h3>span{
+.Showlist-footList-list h3>img{
 	display: inline-block;
-	color: #E2E2E2;
-	font-size: 12px;
 	margin-right: 5px;
-	background-color: orangered;
-	text-align: center;
 	border-radius: 9px;
 	width: 36px;
 	height: 18px;
@@ -112,4 +110,11 @@
 	border-radius: 10px;
 	background-color: #FFE4C4;
 	color: orangered;
+}
+.Showlist-footList-list .footList-sp3{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background-color: rgb(88, 86, 86);
+	color: white;
 }

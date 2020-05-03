@@ -1,22 +1,33 @@
 import React, {Component} from 'react';
 import '../../assets/css/home.css'
 import {connect} from 'react-redux'
+import { Button,Carousel } from 'element-react';
+import 'element-theme-default';
 import header1 from '../../assets/img/header1.png'
 import header3 from '../../assets/img/header3.png'
 import newsCreator from '../../store/actionCreator/home/index.js'
+
+import img1 from '../img/0.jpg'
+import img2 from '../img/1.jpg'
+import img3 from '../img/2.jpg'
+import img4 from '../img/3.jpg'
 // import img from '../img/0.jpg'
  class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
+			imgarr:[]
 		};
     }
 	async componentDidMount(){
 		this.props.getClassify()
 		// console.log(this.props)
+		this.setState({
+			imgarr:[img1,img2,img3,img4]
+		})
 	}
     render() {
-		// console.log(this)
+		console.log(this.props.slide_list)
         return (
 		<div>
 			<header>
@@ -26,19 +37,28 @@ import newsCreator from '../../store/actionCreator/home/index.js'
 				</div>
 				<div><img src={header3}/></div>
 			</header>
-			<div className="banner">
-				<img src="../img/banner.png" />
+			<div className="demo-3 medium">
+				<Carousel interval="5000" arrow="always">
+					{
+					this.props.slide_list.map((v,index) => {
+						return (
+						<Carousel.Item key={index}>
+							<img className={'el-carousel-img'} src={v.image_url}/>
+						</Carousel.Item>
+						)
+					})
+					}
+				</Carousel>
 			</div>
 			<div className="main">
 				<ul>
 					{
 						this.props.classify_list.map(v=>(
 							<li onClick={()=>{
-								this.props.history.push({pathname:"/showlist"})
+								this.props.history.push({pathname:"/showlist",state:{category_id:v.category_id}})
 							}} key={v.id} ><img src={v.pic}/><p>{v.name}</p></li>
 						))
 					}
-					
 				</ul>
 			</div>
 			<div className="adv">
@@ -47,7 +67,6 @@ import newsCreator from '../../store/actionCreator/home/index.js'
 						<img key={v.ad_id} src={v.pic} />
 					))
 				}
-				
 			</div>
 			<div className="breadcrumb">
 				<h3>热门演出</h3>
@@ -157,7 +176,8 @@ function mapStateToProps(state){
 		advert1:state.home.advert1,
 		seachlist:state.home.seachlist,
 		onlseach:state.home.onlseach,
-		recommend:state.home.recommend
+		recommend:state.home.recommend,
+		slide_list:state.home.slide_list
 	}
 }
 function mapDispatchToProps(dispatch){

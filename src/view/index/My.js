@@ -22,8 +22,12 @@ export default class My extends Component {
 					<img className={"my-header-img1"} src={shezhi}/>
 					<div className={"my-header-box"}>
 						<img className={"my-header-img2"} src={"https://m.juooo.com/static/img/logo-user.8413cbf.png"}/>
-						<span>注册|登录</span><br/>
-						<span>请点击登录></span>
+						<span onClick={()=>{
+							this.props.history.push({pathname:"/login"})
+						}}>注册|登录</span><br/>
+						<span onClick={()=>{
+							this.props.history.push({pathname:"/login"})
+						}}>请点击登录></span>
 						<p className={"my-header-box-vip"}>普通会员</p>
 						<ul className={"my-header-box-item"}>
 							<li>

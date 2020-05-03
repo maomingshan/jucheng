@@ -36,6 +36,12 @@ function getrecommend(payload){
 		payload
 	}
 }
+function getSlideList(payload){
+	return{
+		type:ListType.SLIDE_LIST,
+		payload
+	}
+}
 export default {
 	getList(dispatch){
 		return async(dispatch)=>{
@@ -47,6 +53,8 @@ export default {
 			const data3=await axios.get("/home/index/getFloorShow?city_id=0&version=6.1.1&referer=2")
 			const recommend=await axios.get("/Show/Search/getShowList?city_id=0&category=&keywords=&venue_id=&start_time=&page=1&referer_type=index&version=6.1.1&referer=2")
 			// console.log(recommend.data.list)
+			
+			dispatch(getSlideList(data.slide_list))
 			dispatch(getrecommend(recommend.data.list))
 			dispatch(getSche(data3.data[2].list))
 			dispatch(backList(data2.data.list))
