@@ -1,0 +1,78 @@
+.goBack{
+    text-align: left;
+    font-size: 30px;
+    padding-left: 15px;
+}
+.login-img{
+    width: 172px;
+    height: 54px;
+    margin: 35px auto 36px auto;
+}
+.inputDiv{
+    margin-left: 10%;
+    width: 80%;
+    height: 21px;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    border-bottom: 1px solid rebeccapurple;
+}
+.inputDiv input{
+    outline: 0;
+    border: none;
+    width: 100%;
+    height: 21;
+    font-size: 18px;
+}
+.login-btn{
+    margin-top: 30px;
+    background-color: salmon;
+    outline: 0;
+    border: none;
+    width: 80%;
+    height: 54px;
+    color: white;
+    font-size: 22px;
+    border-radius: 27px;
+}
+.ligin-footer{
+    padding-top: 10px;
+    width: 80%;
+    height: 21px;
+    margin: auto;
+}
+.ligin-footer .footer-left{
+    float: left;
+}
+.ligin-footer .footer-right{
+    float: right;
+}
+.bottom-box{
+    width: 70%;
+    height: 36px;
+    padding-top: 36px;
+    border-top: 1px solid black;
+    margin: 50px auto;
+    position: relative;
+}
+.bottom-box span{
+    width: 108px;
+    height: 26px;
+    color: #999999;
+    background-color:#fefefe;
+    position: absolute;
+    top: -15px;
+    left: 33%;
+}
+.bottom-box img{
+    width: 38px;
+    height: 38px;
+}
+.bottom-box .bottom-img1{
+    float: left;
+    margin-left: 55px;
+}
+.bottom-box .bottom-img2{
+    float: right;
+    margin-right: 55px;
+}

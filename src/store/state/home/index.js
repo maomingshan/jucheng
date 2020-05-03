@@ -5,5 +5,6 @@ export default {
 	advert1:[],
 	seachlist:[],
 	onlseach:[],
-	recommend:[]
+	recommend:[],
+	slide_list:[]
 }

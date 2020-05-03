@@ -16,6 +16,8 @@ export default function(state=newsListInit,{type,payload}){
 		state.onlseach=payload[0]
 	}else if(type===newsListType.RECOM_LIST){
 		state.recommend=payload
+	}else if(type===newsListType.SLIDE_LIST){
+		state.slide_list=payload
 	}
 	return state;
 }
