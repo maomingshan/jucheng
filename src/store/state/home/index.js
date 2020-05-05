@@ -6,5 +6,6 @@ export default {
 	seachlist:[],
 	onlseach:[],
 	recommend:[],
-	slide_list:[]
+	slide_list:[],
+	vip_list:[]
 }

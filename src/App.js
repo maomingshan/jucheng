@@ -7,12 +7,14 @@ import {
 import Index from './view/Index.js'
 import Login from './view/Login.js'
 import Showlist from './view/Showlist.js'
+import Detail from './view/Detail.js'
 function App() {
   return (
     <div className="App">
 		<Switch>
 			<Route path={"/login"} component={Login}></Route>
 			<Route path={"/showlist"} component={Showlist}></Route>
+			<Route path={"/detail"} component={Detail}></Route>
 			<Route path={"/"} component={Index}></Route>
 		</Switch>
     </div>

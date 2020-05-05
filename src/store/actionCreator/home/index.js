@@ -42,6 +42,12 @@ function getSlideList(payload){
 		payload
 	}
 }
+function getVipList(payload){
+	return{
+		type:ListType.VIP_LIST,
+		payload
+	}
+}
 export default {
 	getList(dispatch){
 		return async(dispatch)=>{
@@ -52,8 +58,10 @@ export default {
 			const data2=await axios.get("/show/tour/getList?version=6.1.1&referer=2")
 			const data3=await axios.get("/home/index/getFloorShow?city_id=0&version=6.1.1&referer=2")
 			const recommend=await axios.get("/Show/Search/getShowList?city_id=0&category=&keywords=&venue_id=&start_time=&page=1&referer_type=index&version=6.1.1&referer=2")
-			// console.log(recommend.data.list)
-			
+			const viplist=await axios.get("/vip/index/getVipHomeSchedular")
+			// console.log(viplist.data.allList)
+
+			dispatch(getVipList(viplist.data.allList))
 			dispatch(getSlideList(data.slide_list))
 			dispatch(getrecommend(recommend.data.list))
 			dispatch(getSche(data3.data[2].list))
