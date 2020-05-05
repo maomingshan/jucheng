@@ -3,7 +3,6 @@ import '../assets/css/showlist.css'
 import {connect} from 'react-redux'
 import newsCreator from '../store/actionCreator/showlist/index.js'
 
-import img from '../assets/img/25.jpg'
 // import List from './showlist/showlist.js'
 import dizhi from "../assets/img/dizhi.png";
 class Showlist extends Component {
@@ -17,7 +16,7 @@ class Showlist extends Component {
 		this.props.showList(this.props.location.state.category_id)
 	}
     render() {
-		console.log(this.props.show_type)
+		// console.log(this.props.show_list)
         return (
             <div>
                 <div className={"Showlist-header"}>
@@ -29,7 +28,7 @@ class Showlist extends Component {
 				</div>
 				<div className={"Showlist-showtype"}>
 					<ul className={"Showlist-movebox"}>
-						<li className={"Showlist-movebox-min"} onClick={()=>{
+						<li className={this.state.index===0?"Showlist-movebox-min show-active":"Showlist-movebox-min"} onClick={()=>{
 									this.props.showList(0)
 									this.setState({
 										index:0
@@ -56,10 +55,13 @@ class Showlist extends Component {
 						</li>
 					</ul>
 				</div>
+				{/* 瀑布流 */}
 				<div className={"Showlist-footList"}>
 					{
 						this.props.show_list.map(v=>(
-							<div className={"Showlist-footList-list"} key={v.show_id}>
+							<div className={"Showlist-footList-list"} key={v.show_id} onClick={()=>{
+								this.props.history.push({pathname:"/detail",state:{schedular_id:v.schedular_id}})
+							}}>
 								<img src={v.pic}/>
 								<h3><img style={{display:v.method_icon?'block':'none'}} src={v.method_icon}/>{v.name}</h3>
 								<span className={"footList-sp1"}>{v.start_show_time}{v.show_time_bottom}</span>

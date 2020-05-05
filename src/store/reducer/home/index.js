@@ -18,6 +18,8 @@ export default function(state=newsListInit,{type,payload}){
 		state.recommend=payload
 	}else if(type===newsListType.SLIDE_LIST){
 		state.slide_list=payload
+	}else if(type===newsListType.VIP_LIST){
+		state.vip_list=payload
 	}
 	return state;
 }
