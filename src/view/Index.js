@@ -15,7 +15,7 @@ export default class Index extends Component {
         this.state = {};
     }
     render() {
-		console.log(this)
+		// console.log(this)
         return (
             <div>
                 <nav className={"nav"}>

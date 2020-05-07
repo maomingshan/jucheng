@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../../assets/css/home.css'
 import {connect} from 'react-redux'
-import { Button,Carousel } from 'element-react';
+import { Carousel } from 'element-react';
 import 'element-theme-default';
 import header1 from '../../assets/img/header1.png'
 import header3 from '../../assets/img/header3.png'
@@ -10,7 +10,6 @@ import newsCreator from '../../store/actionCreator/home/index.js'
     constructor(props) {
         super(props);
         this.state = {
-			
 		};
     }
 	async componentDidMount(){
@@ -18,7 +17,7 @@ import newsCreator from '../../store/actionCreator/home/index.js'
 		// console.log(this.props)
 	}
     render() {
-		// console.log(this.props.seachlist)
+		// console.log(this.props.classify_list)
         return (
 		<div>
 			{/* 头部 */}
@@ -33,13 +32,13 @@ import newsCreator from '../../store/actionCreator/home/index.js'
 			<div className="demo-3 medium">
 				<Carousel interval="5000" arrow="always">
 					{
-					this.props.slide_list.map((v,index) => {
-						return (
-						<Carousel.Item key={index}>
-							<img className={'el-carousel-img'} src={v.image_url}/>
-						</Carousel.Item>
-						)
-					})
+						this.props.slide_list.map((v,index) => {
+							return (
+								<Carousel.Item key={index}>
+									<img className={'el-carousel-img'} src={v.image_url}/>
+								</Carousel.Item>
+							)
+						})
 					}
 				</Carousel>
 			</div>
@@ -49,7 +48,9 @@ import newsCreator from '../../store/actionCreator/home/index.js'
 					{
 						this.props.classify_list.map(v=>(
 							<li onClick={()=>{
-								this.props.history.push({pathname:"/showlist",state:{category_id:v.category_id}})
+								if(v.id<5){
+									this.props.history.push({pathname:"/showlist",state:{category_id:v.category_id}})
+								}
 							}} key={v.id} ><img src={v.pic}/><p>{v.name}</p></li>
 						))
 					}

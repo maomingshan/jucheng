@@ -21,7 +21,9 @@ class Theater extends Component {
 				{
 					this.props.theatre_list.map((v,i)=>(
 						<div className={"theater-box"} key={v.id} >
-							<div className={"theater-box-title"}>
+							<div className={"theater-box-title"} onClick={()=>{
+								this.props.history.push({pathname:"/thelist",state:{theatre_id:v.id}})
+							}}>
 								<img src={v.pic} className={"theater-box-title-img"}/>
 								<p className={"theater-box-title-p1"}>{v.name}</p>
 								<p className={"theater-box-title-p2"}>{v.count}场在售演出</p>
