@@ -18,7 +18,7 @@ export default{
         return async(dispatch)=>{
             const {data}=await axios.get("/Show/Search/getShowList?category="+id)
             const res=await axios.get("/Show/Index/getShowCategoryList")
-            console.log(res.data)
+            // console.log(res.data)
             dispatch(setShowList(data.list))
             dispatch(getType(res.data))
         }
