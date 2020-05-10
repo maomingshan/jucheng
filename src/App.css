@@ -5,6 +5,9 @@ nav a{
   margin:5px;
 }
 .App-link {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	color: #61dafb;
 	width: 25%;
 }
